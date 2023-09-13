@@ -1,1 +1,2 @@
+<p>auth</p>
 <slot />
