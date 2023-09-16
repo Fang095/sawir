@@ -3,7 +3,7 @@
 
   import * as Card from '$lib/components/ui/card';
   import { AuthIcon } from '$lib/components';
-  import LoginForm from './login-form.svelte';
+  import { LoginForm } from '$lib/components/forms';
 
   export let data;
 </script>

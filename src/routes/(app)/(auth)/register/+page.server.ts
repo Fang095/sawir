@@ -1,17 +1,17 @@
 import { fail } from '@sveltejs/kit';
 import { superValidate } from 'sveltekit-superforms/server';
 
-import { formSchema } from './schema';
+import { registerFormSchema } from '$lib/schemas';
 
 export function load() {
   return {
-    form: superValidate(formSchema)
+    form: superValidate(registerFormSchema)
   };
 }
 
 export const actions = {
   default: async (event) => {
-    const form = await superValidate(event, formSchema);
+    const form = await superValidate(event, registerFormSchema);
 
     console.log('form - ', form);
 

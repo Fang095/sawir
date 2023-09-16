@@ -3,7 +3,7 @@
 
   import * as Card from '$lib/components/ui/card';
   import { AuthIcon } from '$lib/components/auth';
-  import ResetPasswordForm from './reset-password-form.svelte';
+  import { ResetPasswordForm } from '$lib/components/forms';
 
   export let data;
 </script>
