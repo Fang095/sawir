@@ -1,23 +1,11 @@
-<script lang="ts" context="module">
-  import { z } from 'zod';
-
-  export const formSchema = z.object({
-    username: z.string().min(2).max(10),
-    password: z.string().min(10, { message: 'password must be 10 characters or more' })
-  });
-
-  export type FormSchema = typeof formSchema;
-</script>
-
 <script lang="ts">
   import { User } from 'lucide-svelte';
-  import type { SuperValidated } from 'sveltekit-superforms';
 
   import * as Card from '$lib/components/ui/card';
-  import * as Form from '$lib/components/ui/form';
   import { AuthIcon } from '$lib/components';
+  import LoginForm from './login-form.svelte';
 
-  export let form: SuperValidated<FormSchema>;
+  export let data;
 </script>
 
 <Card.Root class="pt-10 pb-6 space-y-8">
@@ -36,39 +24,7 @@
   </Card.Header>
 
   <Card.Content>
-    <Form.Root
-      schema={formSchema}
-      {form}
-      let:config
-      method="POST"
-      action="?/login"
-      class="space-y-6"
-    >
-      <Form.Field {config} name="username">
-        <Form.Item>
-          <Form.Input />
-          <Form.Label>Username</Form.Label>
-        </Form.Item>
-      </Form.Field>
-
-      <Form.Field {config} name="password">
-        <Form.Item>
-          <Form.Input type="password" />
-          <Form.Label>Password</Form.Label>
-        </Form.Item>
-      </Form.Field>
-
-      <div class="flex items-center justify-between">
-        <Form.Button>Login</Form.Button>
-
-        <a
-          href="/reset-password"
-          class="text-sm transition-colors ease-out text-text-secondary hover:text-gray-950 hover:underline"
-        >
-          Forgot password?
-        </a>
-      </div>
-    </Form.Root>
+    <LoginForm form={data.form} />
   </Card.Content>
 </Card.Root>
 

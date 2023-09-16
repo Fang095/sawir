@@ -1,22 +1,11 @@
-<script lang="ts" context="module">
-  import { z } from 'zod';
-
-  export const formSchema = z.object({
-    email: z.string().email()
-  });
-
-  export type FormSchema = typeof formSchema;
-</script>
-
 <script lang="ts">
   import { Lock } from 'lucide-svelte';
-  import type { SuperValidated } from 'sveltekit-superforms';
 
-  import * as Form from '$lib/components/ui/form';
   import * as Card from '$lib/components/ui/card';
   import { AuthIcon } from '$lib/components/auth';
+  import ResetPasswordForm from './reset-password-form.svelte';
 
-  export let form: SuperValidated<FormSchema>;
+  export let data;
 </script>
 
 <Card.Root class="pt-10 pb-6 space-y-8">
@@ -36,24 +25,7 @@
   </Card.Header>
 
   <Card.Content>
-    <Form.Root
-      schema={formSchema}
-      {form}
-      let:config
-      method="POST"
-      action="?/reset-password"
-      class="space-y-6"
-    >
-      <Form.Field {config} name="email">
-        <Form.Item>
-          <Form.Input type="email" />
-          <Form.Label>Email</Form.Label>
-          <Form.Validation />
-        </Form.Item>
-      </Form.Field>
-
-      <Form.Button>Send Instructions To Email</Form.Button>
-    </Form.Root>
+    <ResetPasswordForm form={data.form} />
   </Card.Content>
 </Card.Root>
 
