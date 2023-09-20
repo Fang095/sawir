@@ -11,7 +11,7 @@
 
 <LabelPrimitive.Root
   class={cn(
-    'absolute bottom-0 left-3 top-0 inline-flex -translate-y-1/4 cursor-text items-center text-xs font-medium uppercase text-[#A3A3A3] transition-all peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-1/4',
+    'absolute bottom-0 left-3 top-0 inline-flex -translate-y-1/4 cursor-text items-center text-sm font-medium text-text-secondary transition-all peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-1/4',
     className
   )}
   {...$$restProps}

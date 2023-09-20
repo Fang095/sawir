@@ -13,7 +13,7 @@
 
 <div
   class={cn(
-    'relative w-full border border-gray-100 rounded-sm h-14 bg-gray-100/30 ring-blue-100/75 focus-within:border-blue-300 focus-within:ring',
+    'relative w-full border border-gray-100  rounded-sm h-14 bg-gray-50 ring-blue-100/75 focus-within:border-blue-300 focus-within:ring',
     $errors && 'border-destructive focus-within:border-destructive ring-destructive/10',
     className
   )}

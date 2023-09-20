@@ -11,7 +11,7 @@
   <Form.Field {config} name="email">
     <Form.Item>
       <Form.Input type="email" />
-      <Form.Label>email</Form.Label>
+      <Form.Label>Email</Form.Label>
       <Form.Validation />
     </Form.Item>
   </Form.Field>

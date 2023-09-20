@@ -3,7 +3,7 @@
 
   import * as Card from '$lib/components/ui/card';
   import { AuthIcon } from '$lib/components';
-  import { LoginForm } from '$lib/components/forms';
+  import { LoginForm } from '$lib/components';
 
   export let data;
 </script>
@@ -18,7 +18,8 @@
       <Card.Title tag="h2" class="text-2xl font-medium">Welcome back to Sawir</Card.Title>
 
       <Card.Description class="text-sm text-center text-text-secondary">
-        Dive back into the conversations, share your updates, and connect with your community.
+        Welcome back to Sawir, where your adventures continue. Share moments and connect with
+        friends!
       </Card.Description>
     </div>
   </Card.Header>

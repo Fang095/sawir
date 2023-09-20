@@ -12,7 +12,7 @@
     <Form.Item>
       <Form.Input />
       <Form.Validation />
-      <Form.Label>Username</Form.Label>
+      <Form.Label>Username / Email</Form.Label>
     </Form.Item>
   </Form.Field>
 
@@ -28,7 +28,7 @@
     <Form.Button>Login</Form.Button>
 
     <a
-      href="/reset-password"
+      href="/forgot-password"
       class="text-sm transition-colors ease-out text-text-secondary hover:text-gray-950 hover:underline"
     >
       Forgot password?

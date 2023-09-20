@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Logo from '$lib/components/Logo.svelte';
+  import { Logo } from '$lib/components';
 </script>
 
 <div class="flex items-center justify-center h-full pattern">

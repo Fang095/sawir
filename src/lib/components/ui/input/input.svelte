@@ -14,7 +14,7 @@
 
 <input
   class={cn(
-    'w-full px-3 pt-6 pb-2 placeholder-transparent bg-transparent border-none peer focus:outline-none',
+    'w-full px-3 pt-6 pb-2 autofill:bg-red-500 bg-transparent placeholder-transparent border-none peer focus:outline-none',
     className
   )}
   bind:value

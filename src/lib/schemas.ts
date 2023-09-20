@@ -1,8 +1,16 @@
 import { z } from 'zod';
 
-const email = z.string().email({ message: 'email must be properly formatted' });
-const username = z.string().min(2, { message: 'username must contain 2 or more characters' });
-const password = z.string().min(10, { message: 'password must contain or more characters' });
+const email = z.string().toLowerCase().email({ message: "This isn't an email. Try again." });
+
+const username = z
+  .string()
+  .toLowerCase()
+  .min(2, { message: 'Username must contain 2 or more characters.' });
+
+const password = z
+  .string()
+  .toLowerCase()
+  .min(10, { message: 'Password must contain 8 or more characters.' });
 
 export const loginFormSchema = z.object({
   username,
@@ -24,3 +32,14 @@ export const resetPasswordFormSchema = z.object({
 });
 
 export type ResetPasswordFormSchema = typeof resetPasswordFormSchema;
+
+export const changePasswordFormSchema = z.object({
+  password,
+  confirmPassword: password
+});
+// .refine((data) => data.password === data.confirmPassword, {
+//   message: "Passwords don't match",
+//   params: ['confirmPassword']
+// });
+
+export type ChangePasswordFormSchema = typeof changePasswordFormSchema;
