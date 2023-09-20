@@ -1,7 +1,7 @@
 # Sawir Project Setup
 1. Clone the repo
    ```sh
-    https://github.com/Fang095/sawir.git
+    git clone https://github.com/Fang095/sawir.git
    ```
 2. cd to sawir folder
    ```sh
