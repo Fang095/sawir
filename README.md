@@ -1,38 +1,32 @@
-# create-svelte
+# Sawir Project Setup
+1. Clone the repo
+   ```sh
+    https://github.com/Fang095/sawir.git
+   ```
+2. cd to sawir folder
+   ```sh
+   cd sawir
+   ```
+3. Install packages with pnpm
+    ```sh
+    pnpm install
+    ```
+4. Setup your `.env` file
+    - Duplicate `.env.example` to `.env`
+    - Put in your database connection string `DATABASE_URL`
+    - Put in your `GMAIL_USER`
+    - Put in your `GMAIL_PASS` (this is the app passcord for your gmail account. you can find simple guide here https://miracleio.me/snippets/use-gmail-with-nodemailer
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+5. Setup the prisma database
+    - It would probably be simpler if you delete the `prisma/migrations` folder then run the following two commands
+      ```sh
+        pnpm dlx prisma db push
+      ```
+       ```sh
+        pnpm dlx prisma migrate dev --init
+       ```
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+6. You should be ready to star the application now.
+   ```sh
+    pnpm dev
+   ```
